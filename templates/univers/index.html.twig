@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	| Univers
+{% endblock %}
+
+{% block body %}
+	{% include 'components/_header2.html.twig' %}
+
+	<main class="container d-flex justify-content-center flex-column">
+		<div class="corner my-5">
+			<h2 class="text-center text-light">
+				<font color="#ffd99c">Bioshock</font> c'est quoi ?
+			</h2>
+
+			<div class="row justify-content-center">
+				<p class="w-75 text-light">
+					<font color="#ffd99c">BioShock</font> est sortie le 21 août 2007.
+					<br><font color="#ffd99c">BioShock</font> est un jeu d'action-aventure ainsi qu'un FPS survival-horror créé par Irrational Games/2K Australia.
+					<br>Lors de l'exploration d'une dystopie sous-marine, <font color="#ffd99c">Rapture</font>, le joueur est contraint de transformer tout ce qui l'entoure en arme ; modifier biologiquement votre corps à l'aide de plasmides, pirater divers systèmes , améliorer vos armes, créer des variantes de vos munitions et expérimenter différentes technique de combat. Tout est possible.
+				</p>
+			</div>
+		</div>
+
+		<section class="row align-items-center">
+			<img src="{{ asset('build/images/Decor.jpeg') }}" class="col-lg-6 my-4" alt="img"/>
+			<div class="corners col-lg-6">
+				<div class="rond card-body">
+					<h2 class="card-title text-light">Rapture</h2>
+					<p class="card-text text-light">
+						<font color="#ffd99c">Rapture</font> est une gigantesque cité sous-marine créée par <font color="#ffd99c">Andrew Ryan</font>, pour échapper aux problèmes politiques, sociaux et religieux du monde d'après la seconde guerre mondiale.
+						<br>Elle a été officiellement baptisée le 5 novembre 1946, et se situe à 63° 2' N, 29° 55' W (ce qui correspond à environ 416 kilomètres au sud-ouest de la capitale d'Islande, Reykjavik).
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="row align-items-center flex-column-reverse flex-lg-row">
+			<div class="col-lg-6">
+				<div class="rond corners card-body">
+					<h2 class="card-title text-light">Les Habitants</h2>
+					<p class="card-text text-light">
+						Humains, <font color="#ffd99c">Chrosômes</font>, <font color="#ffd99c">Protecteurs</font>, <font color="#ffd99c">Tourelle de sécurités</font> et bien d'autres, Rapture se voit habité par nombres d'êtres vivants se battant pour la liberté, l'ordre, l'argent et surtout l'<font color="#ffd99c">adam</font>.
+					</p>
+				</div>
+			</div>
+			<img src="{{ asset('build/images/People.jpeg') }}" class="col-lg-6 my-4" alt="img"/>
+		</section>
+
+		<section class="row align-items-center">
+			<img src="{{ asset('build/images/Gameplay.jpeg') }}" class="col-lg-6 my-4" alt="img"/>
+			<div class="corners col-lg-6">
+				<div class="rond card-body">
+					<h2 class="card-title text-light">Gameplay</h2>
+					<p class="card-text text-light">
+						BioShock est un FPS avec quelques éléments de personnalisation de JDR en jeu.
+						<br>Le système de <font color="#ffd99c">santé/mana</font> fonctionne de manière similaire à System Shock 2.
+						<br><font color="#ffd99c">La santé et l'Eve</font> peuvent être restaurées avec des <font color="#ffd99c">trousses de soins</font> et <font color="#ffd99c">des seringues d'Eve</font> que le joueur peut transporter en quantité limitée.
+						<br>Une méthode alternative consiste à utiliser <font color="#ffd99c">un poste de soins</font> et les divers consommables dispersés à travers Rapture.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="row align-items-center flex-column-reverse flex-lg-row">
+			<div class="col-lg-6">
+				<div class="rond corners card-body">
+					<h2 class="card-title text-light">Armements et Pouvoirs</h2>
+					<p class="card-text text-light">
+						Des armes conventionnelles sont collectées et améliorées durant le jeu, en plus des <font color="#ffd99c">améliorations génétiques</font>.
+						<br><font color="#ffd99c">Les plasmides</font> donnent au joueur la possibilité d'utiliser des pouvoirs tels que la télékinésie ou l'arc électrique, qui sont utilisé durant les combats contre la population dérangée de la cité sous-marine.
+						<br><font color="#ffd99c">Les plasmides</font> sont des armes offensives et défensives, tandis que <font color="#ffd99c">les fortifiants génétiques</font> fonctionnent comme des bonus passifs.
+					</p>
+				</div>
+			</div>
+			<img src="{{ asset('build/images/Power.jpeg') }}" class="col-lg-6 my-4" alt="img"/>
+		</section>
+
+		<section class="row align-items-center">
+			<img src="{{ asset('build/images/SoeurBigDaddy.jpeg') }}" class="col-lg-6 my-4" alt="img"/>
+			<div class="corners col-lg-6">
+				<div class="rond card-body">
+					<h2 class="card-title text-light">Petite soeur et Protecteur</h2>
+					<p class="card-text text-light">
+						<font color="#ffd99c">Les Petites Soeurs</font> sont des fillettes agées d'environ sept ans qui ont été génétiquement modifiées et conditionnées pour récupérer l'<font color="#ffd99c">Adam</font> sur les cadavres de Rapture.
+						<br><font color="#ffd99c">Les Petites Soeurs</font> sont presque toujours accompagnées d'un <font color="#ffd99c">Protecteur</font>.
+						<br><font color="#ffd99c">Les Protecteurs</font>, aussi connus sous le nom de "<font color="#ffd99c">Big Daddies</font>" sont des humains génétiquement améliorés et qui ont eu leur peau et organes greffés à un scaphandre.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	{% include 'components/_banner.html.twig'%}
+{% endblock %}

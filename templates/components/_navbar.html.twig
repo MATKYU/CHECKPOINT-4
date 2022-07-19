@@ -5,7 +5,10 @@
 <nav class="navbar navbar-expand-lg bg-dark">
 	<div class="container-fluid mx-4">
 		<div class="logo m-0">
-			<h3 class="m-0">B<span>IO</span>S<span>HOCK</span></h3>
+			<a class="list-unstyled" href="{{ path('home_index') }}">
+				<h3 class="m-0 text-light">B<span>IO</span>S<span>HOCK</span>
+				</h3>
+			</a>
 		</div>
 		{# <a class="navbar-brand text-light" href="#">BIOSHOCK</a> #}
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +17,7 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 			<ul class="navbar-nav d-flex gap-4 align-items-end">
 				<li class="nav-item">
-					<a class="rond nav-link text-light rounded-pill" href="#">Présentation</a>
+					<a class="rond nav-link text-light rounded-pill" href="{{ path('univers_index') }}">Univers</a>
 				</li>
 				<li class="nav-item">
 					<a class="rond nav-link text-light rounded-pill" href="#">Bestiaire</a>

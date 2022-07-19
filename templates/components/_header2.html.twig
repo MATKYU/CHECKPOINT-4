@@ -1,0 +1,14 @@
+{% block stylesheets %}
+	{{ encore_entry_link_tags('header2') }}
+{% endblock %}
+
+<div class="video-wrapper">
+  <video playsinline autoplay muted loop poster="">
+    <source src="{{ asset('build/images/LiveWallpaper2.mp4')}}" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+
+  {# <div class="header">
+    <h1>Rapture</h1>
+  </div> #}
+</div>
