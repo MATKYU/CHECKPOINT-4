@@ -21,7 +21,7 @@ class Bestiary
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $descritpion = null;
+    private ?string $description = null;
 
     public function getId(): ?int
     {
@@ -52,14 +52,14 @@ class Bestiary
         return $this;
     }
 
-    public function getDescritpion(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descritpion;
+        return $this->description;
     }
 
-    public function setDescritpion(string $descritpion): self
+    public function setDescription(string $description): self
     {
-        $this->descritpion = $descritpion;
+        $this->description = $description;
 
         return $this;
     }

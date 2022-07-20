@@ -1,0 +1,17 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Nouveaux personnages
+{% endblock %}
+
+{% block body %}
+	<h1 class="pt-4 ms-2 text-center text-light">Créer un nouveaux personnage</h1>
+
+	<a href="{{ path('admin_bestiary_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>Retour à la liste</a>
+
+	<div class="w-50 mx-auto my-4 text-center text-light">
+		{{ include('admin/admin_bestiary/_form.html.twig') }}
+	</div>
+
+
+{% endblock %}
