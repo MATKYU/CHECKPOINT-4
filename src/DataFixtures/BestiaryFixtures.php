@@ -10,11 +10,11 @@ class BestiaryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $mob = new Bestiary();
-        $mob->setImage('AndrewRyan.jpeg');
-        $mob->setName('Andrew Ryan');
-        $mob->setDescritpion('Andrew Ryan est l\'homme qui à crée Rapture.');
-        $manager->persist($mob);
+        $bestiary = new Bestiary();
+        $bestiary->setImage('AndrewRyan.jpeg');
+        $bestiary->setName('Andrew Ryan');
+        $bestiary->setDescritpion('Andrew Ryan est l\'homme qui à crée Rapture.');
+        $manager->persist($bestiary);
         $manager->flush();
     }
 }

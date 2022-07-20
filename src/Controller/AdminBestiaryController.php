@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/admin/bestiaires', name: 'admin_bestiary_')]
 class AdminBestiaryController extends AbstractController
 {
     // #[Route('/admin/bestiaires', name: 'admin_bestiary_')]
@@ -17,11 +18,11 @@ class AdminBestiaryController extends AbstractController
     //     ]);
     // }
 
-    // #[Route('/', name: 'index', methods: ['GET'])]
-    // public function index(BestiaryRepository $bestiaryRepository): Response
-    // {
-    //     return $this->render('admin/admin_bestiary/index.html.twig', [
-    //         'bestiaries' => $bestiaryRepository->findAll(),
-    //     ]);
-    // }
+    #[Route('/', name: 'index', methods: ['GET'])]
+    public function index(BestiaryRepository $bestiaryRepository): Response
+    {
+        return $this->render('admin/admin_bestiary/index.html.twig', [
+            'bestiaries' => $bestiaryRepository->findAll(),
+        ]);
+    }
 }

@@ -1,0 +1,41 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('bestiary') }}
+{% endblock %}
+
+{% block title %}
+	{{parent()}}
+	| Bestiaires
+{% endblock %}
+
+{% block body %}
+	<main class="container mt-5">
+		<h1 class="text-light mb-5">Bestiaires</h1>
+	</main>
+
+	<table class="table align-middle text-light">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Nom</th>
+				<th>Description</th>
+				<th class="d-flex justify-content-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody class="text-light">
+			{% for bestiary in bestiaries %}
+				<tr>
+					{# <td><img src="{{ bestiary.image }}" alt="img"></td> #}
+					<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+					<td>{{ bestiary.name }}</td>
+					<td>{{ bestiary.descritpion }}</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">Pas de personnages trouvés</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
