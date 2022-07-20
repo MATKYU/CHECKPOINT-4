@@ -13,7 +13,7 @@ class BestiaryFixtures extends Fixture
         $bestiary = new Bestiary();
         $bestiary->setImage('AndrewRyan.jpeg');
         $bestiary->setName('Andrew Ryan');
-        $bestiary->setDescritpion('Andrew Ryan est l\'homme qui à crée Rapture.');
+        $bestiary->setDescription('Andrew Ryan est l\'homme qui à crée Rapture.');
         $manager->persist($bestiary);
         $manager->flush();
     }

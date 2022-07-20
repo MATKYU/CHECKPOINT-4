@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('admin_bestiary_delete', {'id': bestiary.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ bestiary.id) }}">
+    <button class="btn btn-danger text-light">Supprimer<i class="bi bi-trash3-fill ms-2"></i></button>
+</form>

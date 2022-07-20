@@ -12,30 +12,38 @@
 {% block body %}
 	<main class="container mt-5">
 		<h1 class="text-light mb-5">Bestiaires</h1>
-	</main>
+		<div class="d-flex justify-content-start">
+			<a class="btn btn-lg m-2 rondAdmin nav-link text-dark rounded-pill" href="{{ path('admin_bestiary_add') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i>
+			</a>
+		</div>
 
-	<table class="table align-middle text-light">
-		<thead>
-			<tr>
-				<th>Image</th>
-				<th>Nom</th>
-				<th>Description</th>
-				<th class="d-flex justify-content-center">Actions</th>
-			</tr>
-		</thead>
-		<tbody class="text-light">
-			{% for bestiary in bestiaries %}
+		<table class="table align-middle text-light">
+			<thead>
 				<tr>
-					{# <td><img src="{{ bestiary.image }}" alt="img"></td> #}
-					<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
-					<td>{{ bestiary.name }}</td>
-					<td>{{ bestiary.descritpion }}</td>
+					<th>Image</th>
+					<th>Nom</th>
+					<th>Description</th>
+					<th>Actions</th>
 				</tr>
-			{% else %}
-				<tr>
-					<td colspan="6">Pas de personnages trouvés</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody class="text-light">
+				{% for bestiary in bestiaries %}
+					<tr>
+						<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+						<td>{{ bestiary.name }}</td>
+						<td>{{ bestiary.description }}</td>
+						<td>
+							<a href="{{ path('admin_bestiary_edit', {'id': bestiary.id}) }}" class="btn btn-warning">Modifier<i class="bi bi-pen ms-2"></i>
+							</a>
+							{{ include('admin/admin_bestiary/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">Pas de personnages trouvés</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
 {% endblock %}
