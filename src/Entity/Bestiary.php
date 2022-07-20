@@ -12,16 +12,20 @@ class Bestiary
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private ?string $image;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $name;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    private ?string $description;
+
+    #[ORM\ManyToOne(inversedBy: 'bestiaries')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $category;
 
     public function getId(): ?int
     {
@@ -60,6 +64,18 @@ class Bestiary
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
