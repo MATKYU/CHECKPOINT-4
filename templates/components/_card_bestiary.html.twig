@@ -11,6 +11,7 @@
 				<th class="text-center">Description</th>
 				<th class="text-center">Lieu</th>
 				<th class="text-center">Weapon</th>
+				<th class="text-center">Plasmides</th>
 			</tr>
 		</thead>
 		<tbody class="text-light">
@@ -21,6 +22,7 @@
 					<td class="TdDescription text-center text-truncate">{{ bestiary.description }}</td>
 					<td class="TdPlace text-center">{{ bestiary.place.name }}</td>
 					<td class="TdPlace text-center">{{ bestiary.weapon.name }}</td>
+					<td class="TdPlace text-center">{{ bestiary.capacity.name }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>

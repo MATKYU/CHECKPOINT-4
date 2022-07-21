@@ -25,6 +25,7 @@
 					<th>Description</th>
 					<th>Lieu</th>
 					<th>Armes</th>
+					<th>Plasmides</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -36,6 +37,7 @@
 						<td>{{ bestiary.description }}</td>
 						<td>{{ bestiary.place.name }}</td>
 						<td>{{ bestiary.weapon.name }}</td>
+						<td>{{ bestiary.capacity.name }}</td>
 						<td>
 							<a href="{{ path('admin_bestiary_edit', {'id': bestiary.id}) }}" class="btn btn-warning">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
