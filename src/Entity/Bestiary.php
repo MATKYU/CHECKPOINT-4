@@ -3,10 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\BestiaryRepository;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BestiaryRepository::class)]
+#[Vich\Uploadable]
 class Bestiary
 {
     #[ORM\Id]
@@ -14,8 +19,8 @@ class Bestiary
     #[ORM\Column()]
     private ?int $id;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name;
@@ -31,6 +36,30 @@ class Bestiary
     #[ORM\JoinColumn(nullable: false)]
     private ?Place $place;
 
+    #[Vich\UploadableField(mapping: 'bestiary', fileNameProperty: 'image')]
+    #[Assert\Image(
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        maxSize: '2M',
+        groups: ['add', 'default'],
+    )]
+    private ?File $imageFile = null;
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;

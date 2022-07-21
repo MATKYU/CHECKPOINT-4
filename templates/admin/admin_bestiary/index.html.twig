@@ -29,7 +29,7 @@
 			<tbody class="text-light">
 				{% for bestiary in bestiaries %}
 					<tr>
-						<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+						<td><img class="w-100 bestiary-image" src="{{ vich_uploader_asset(bestiary) }}" alt="img"></td>
 						<td>{{ bestiary.name }}</td>
 						<td>{{ bestiary.description }}</td>
 						<td>
