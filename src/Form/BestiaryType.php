@@ -6,6 +6,7 @@ use App\DataFixtures\CategoryFixtures;
 use App\Entity\Bestiary;
 use App\Entity\Category;
 use App\Entity\Place;
+use App\Entity\Weapon;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -36,6 +37,10 @@ class BestiaryType extends AbstractType
             ])
             ->add('place', EntityType::class, [
                 'class' => Place::class,
+                'choice_label' => 'name',
+            ])
+            ->add('weapon', EntityType::class, [
+                'class' => Weapon::class,
                 'choice_label' => 'name',
             ]);
     }

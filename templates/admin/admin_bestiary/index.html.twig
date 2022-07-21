@@ -23,6 +23,8 @@
 					<th>Image</th>
 					<th>Nom</th>
 					<th>Description</th>
+					<th>Lieu</th>
+					<th>Armes</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -32,6 +34,8 @@
 						<td><img class="w-100 bestiary-image" src="{{ vich_uploader_asset(bestiary) }}" alt="img"></td>
 						<td>{{ bestiary.name }}</td>
 						<td>{{ bestiary.description }}</td>
+						<td>{{ bestiary.place.name }}</td>
+						<td>{{ bestiary.weapon.name }}</td>
 						<td>
 							<a href="{{ path('admin_bestiary_edit', {'id': bestiary.id}) }}" class="btn btn-warning">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>

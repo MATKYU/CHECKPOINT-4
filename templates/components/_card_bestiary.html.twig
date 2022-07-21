@@ -10,6 +10,7 @@
 				<th class="text-center">Nom</th>
 				<th class="text-center">Description</th>
 				<th class="text-center">Lieu</th>
+				<th class="text-center">Weapon</th>
 			</tr>
 		</thead>
 		<tbody class="text-light">
@@ -19,6 +20,7 @@
 					<td class="TdName text-center">{{ bestiary.name }}</td>
 					<td class="TdDescription text-center text-truncate">{{ bestiary.description }}</td>
 					<td class="TdPlace text-center">{{ bestiary.place.name }}</td>
+					<td class="TdPlace text-center">{{ bestiary.weapon.name }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
