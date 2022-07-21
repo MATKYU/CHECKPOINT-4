@@ -27,6 +27,10 @@ class Bestiary
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category;
 
+    #[ORM\ManyToOne(inversedBy: 'bestiaries')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Place $place;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -76,6 +80,18 @@ class Bestiary
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getPlace(): ?Place
+    {
+        return $this->place;
+    }
+
+    public function setPlace(?Place $place): self
+    {
+        $this->place = $place;
 
         return $this;
     }
