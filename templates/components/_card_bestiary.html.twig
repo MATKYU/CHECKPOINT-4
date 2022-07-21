@@ -1,0 +1,22 @@
+{% block stylesheets %}
+	{{ encore_entry_link_tags('bestiary') }}
+{% endblock %}
+
+<table class="table align-middle text-light">
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>Nom</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="text-light">
+		{% for bestiary in category.bestiaries %}
+			<tr>
+				<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+				<td>{{ bestiary.name }}</td>
+				<td>{{ bestiary.description }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
