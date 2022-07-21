@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\DataFixtures\CategoryFixtures;
 use App\Entity\Bestiary;
+use App\Entity\Capacity;
 use App\Entity\Category;
 use App\Entity\Place;
 use App\Entity\Weapon;
@@ -41,6 +42,10 @@ class BestiaryType extends AbstractType
             ])
             ->add('weapon', EntityType::class, [
                 'class' => Weapon::class,
+                'choice_label' => 'name',
+            ])
+            ->add('capacity', EntityType::class, [
+                'class' => Capacity::class,
                 'choice_label' => 'name',
             ]);
     }

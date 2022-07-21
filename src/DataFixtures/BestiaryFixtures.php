@@ -45,6 +45,7 @@ class BestiaryFixtures extends Fixture implements DependentFixtureInterface
             $bestiary->setCategory($this->getReference('category' . CategoryFixtures::CATEGORIES[rand(0, count(CategoryFixtures::CATEGORIES) - 1)]['Name']));
             $bestiary->setPlace($this->getReference('place' . PlaceFixtures::PLACES[rand(0, count(PlaceFixtures::PLACES) - 1)]['Name']));
             $bestiary->setWeapon($this->getReference('weapon' . WeaponFixtures::WEAPONS[rand(0, count(WeaponFixtures::WEAPONS) - 1)]['Name']));
+            $bestiary->setCapacity($this->getReference('plasmide' . CapacityFixtures::PLASMIDES[rand(0, count(CapacityFixtures::PLASMIDES) - 1)]['Name']));
             $manager->persist($bestiary);
         }
 
