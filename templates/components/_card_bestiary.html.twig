@@ -15,7 +15,7 @@
 		<tbody class="text-light">
 			{% for bestiary in category.bestiaries %}
 				<tr>
-					<td class="TdImage"><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+					<td class="TdImage"><img class="w-100 bestiary-image" src="{{ vich_uploader_asset(bestiary) }}" alt="img"></td>
 					<td class="TdName text-center">{{ bestiary.name }}</td>
 					<td class="TdDescription text-center text-truncate">{{ bestiary.description }}</td>
 					<td class="TdPlace text-center">{{ bestiary.place.name }}</td>

@@ -1,0 +1,15 @@
+vich_uploader:
+  db_driver: orm
+
+  mappings:
+    bestiary:
+        uri_prefix: /uploads/bestiary
+        upload_destination: "%kernel.project_dir%/public/uploads/bestiary"
+        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        inject_on_load: false
+        delete_on_update: false
+        delete_on_remove: false
+
+  metadata:
+    type: attribute

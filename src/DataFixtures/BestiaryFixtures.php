@@ -39,6 +39,7 @@ class BestiaryFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i <= count(self::BESTIARIES); $i++) {
             $bestiary = new Bestiary();
             $bestiary->setImage(self::BESTIARIES[rand(0, count(self::BESTIARIES) - 1)]['Image']);
+            $bestiary->setImage('AndrewRyan.jpeg');
             $bestiary->setName(self::BESTIARIES[rand(0, count(self::BESTIARIES) - 1)]['Name']);
             $bestiary->setDescription(self::BESTIARIES[rand(0, count(self::BESTIARIES) - 1)]['Description']);
             $bestiary->setCategory($this->getReference('category' . CategoryFixtures::CATEGORIES[rand(0, count(CategoryFixtures::CATEGORIES) - 1)]['Name']));

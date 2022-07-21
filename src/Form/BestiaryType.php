@@ -12,12 +12,19 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class BestiaryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Image',
+                'allow_delete'  => false,
+                'download_link' => false,
+                'required'   => false,
+            ])
             ->add('image')
             ->add('name', TextType::class, [
                 'label' => 'Nom',
@@ -30,8 +37,7 @@ class BestiaryType extends AbstractType
             ->add('place', EntityType::class, [
                 'class' => Place::class,
                 'choice_label' => 'name',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
