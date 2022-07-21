@@ -44,6 +44,10 @@ class Bestiary
     )]
     private ?File $imageFile = null;
 
+    #[ORM\ManyToOne(inversedBy: 'bestiaries')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Weapon $weapon;
+
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
@@ -121,6 +125,18 @@ class Bestiary
     public function setPlace(?Place $place): self
     {
         $this->place = $place;
+
+        return $this;
+    }
+
+    public function getWeapon(): ?Weapon
+    {
+        return $this->weapon;
+    }
+
+    public function setWeapon(?Weapon $weapon): self
+    {
+        $this->weapon = $weapon;
 
         return $this;
     }
