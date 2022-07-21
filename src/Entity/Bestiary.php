@@ -20,7 +20,7 @@ class Bestiary
     private ?int $id;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $image;
+    private ?string $image = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name;
