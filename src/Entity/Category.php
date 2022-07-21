@@ -16,7 +16,7 @@ class Category
     private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $Name;
+    private ?string $name;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Bestiary::class)]
     private Collection $bestiaries;
@@ -33,12 +33,12 @@ class Category
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
@@ -69,7 +69,6 @@ class Category
                 $bestiary->setCategory(null);
             }
         }
-
         return $this;
     }
 }
