@@ -1,13 +1,33 @@
 @import "variables.scss";
 
 .bestiary-image {
-    object-fit: contain;
-    height: 200px;
+  object-fit: contain;
+  height: 200px;
 }
 
 .rondAdmin {
-    background-color: #a4ff80;
-    padding: 20px;
-    border: 2px solid #4092208d;
-    border-radius: 20px;
-  }
+  background-color: #a4ff80;
+  padding: 20px;
+  border: 2px solid #4092208d;
+  border-radius: 20px;
+}
+
+.TdImage {
+  height: 200px;
+  width: 200px;
+}
+
+.TdName {
+  height: 200px;
+  width: 200px;
+}
+
+.TdDescription {
+  height: 200px;
+  width: 200px;
+}
+
+.TdPlace {
+  height: 200px;
+  width: 200px;
+}

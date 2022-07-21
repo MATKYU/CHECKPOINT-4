@@ -2,21 +2,25 @@
 	{{ encore_entry_link_tags('bestiary') }}
 {% endblock %}
 
-<table class="table align-middle text-light">
-	<thead>
-		<tr>
-			<th>Image</th>
-			<th>Nom</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody class="text-light">
-		{% for bestiary in category.bestiaries %}
+<div class="table-responsive">
+	<table class="table align-middle text-light">
+		<thead>
 			<tr>
-				<td><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
-				<td>{{ bestiary.name }}</td>
-				<td>{{ bestiary.description }}</td>
+				<th class="text-center">Image</th>
+				<th class="text-center">Nom</th>
+				<th class="text-center">Description</th>
+				<th class="text-center">Lieu</th>
 			</tr>
-		{% endfor %}
-	</tbody>
-</table>
+		</thead>
+		<tbody class="text-light">
+			{% for bestiary in category.bestiaries %}
+				<tr>
+					<td class="TdImage"><img class="w-100 bestiary-image" src="{{ asset('build/images/' ~ bestiary.image) }}" alt="img"></td>
+					<td class="TdName text-center">{{ bestiary.name }}</td>
+					<td class="TdDescription text-center text-truncate">{{ bestiary.description }}</td>
+					<td class="TdPlace text-center">{{ bestiary.place.name }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

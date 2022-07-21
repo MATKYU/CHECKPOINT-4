@@ -9,7 +9,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class BestiaryFixtures extends Fixture implements DependentFixtureInterface
 {
-    public const VALUES = 3;
+    // public const VALUES = 3;
 
     public const BESTIARIES = [
         [
@@ -42,6 +42,7 @@ class BestiaryFixtures extends Fixture implements DependentFixtureInterface
             $bestiary->setName(self::BESTIARIES[rand(0, count(self::BESTIARIES) - 1)]['Name']);
             $bestiary->setDescription(self::BESTIARIES[rand(0, count(self::BESTIARIES) - 1)]['Description']);
             $bestiary->setCategory($this->getReference('category' . CategoryFixtures::CATEGORIES[rand(0, count(CategoryFixtures::CATEGORIES) - 1)]['Name']));
+            $bestiary->setPlace($this->getReference('place' . PlaceFixtures::PLACES[rand(0, count(PlaceFixtures::PLACES) - 1)]['Name']));
             $manager->persist($bestiary);
         }
 
@@ -98,6 +99,7 @@ class BestiaryFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             CategoryFixtures::class,
+            PlaceFixtures::class,
         ];
     }
 }
